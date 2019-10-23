@@ -80,8 +80,9 @@ namespace CS_NumberSorter
                     loop = false;
                 }
             }
-            Console.Clear();
-            Console.WriteLine($"Your numbers in descending order are: {a}, {b}, {c}, {d}, {e}, {f}, {g}, {h}");
+            Console.WriteLine($"\nYour numbers in descending order are: {a}, {b}, {c}, {d}, {e}, {f}, {g}, {h}.");
+            Console.Write("\nPress any key to exit..");
+            Console.ReadKey();
         }
     }
 }
