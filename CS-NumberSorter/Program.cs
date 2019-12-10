@@ -47,9 +47,12 @@ namespace CS_NumberSorter
             }
 
             Array.Sort(values);
-            if (descending) { Array.Reverse(values); }
+            if (descending) { 
+                Array.Reverse(values);
+                Console.Write("\nYour numbers in descending order are: ");
+            }
+            else { Console.Write("\nYour numbers in ascending order are: "); }
 
-            Console.Write("\nYour numbers in descending order are: ");
             for (int x = 0; x < values.Length - 1; x++)
             {
                 Console.Write(values[x] + ", ");
