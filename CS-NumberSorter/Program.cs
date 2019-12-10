@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace CS_NumberSorter
 {
@@ -6,83 +7,39 @@ namespace CS_NumberSorter
     {
         static void Main()
         {
-            double a, b, c, d, e, f, g, h, temp;
-            a = b = c = d = e = f = g = h = 0;
-            bool loop = true; bool retry = true;
+            string[] id = { "a = ", "b = ", "c = ", "d = ", "e = ", "f = ", "g = ", "h = " };
+            double[] values = new double[8];
+            bool retry = true;
 
+            // Sort in descending order
             while (retry)
             {
                 try
                 {
-                    Console.Write("a = "); a = double.Parse(Console.ReadLine());
-                    Console.Write("b = "); b = double.Parse(Console.ReadLine());
-                    Console.Write("c = "); c = double.Parse(Console.ReadLine());
-                    Console.Write("d = "); d = double.Parse(Console.ReadLine());
-                    Console.Write("e = "); e = double.Parse(Console.ReadLine());
-                    Console.Write("f = "); f = double.Parse(Console.ReadLine());
-                    Console.Write("g = "); g = double.Parse(Console.ReadLine());
-                    Console.Write("h = "); h = double.Parse(Console.ReadLine());
+                    for (int i = 0; i < id.Length; i++)
+                    {
+                        Console.Write(id[i]);
+                        values[i] = double.Parse(Console.ReadLine());
+                    }
                     retry = false;
                 }
                 catch (Exception)
                 {
                     Console.Clear();
                     Console.WriteLine("Only numbers are accepted! (positive and negative)\n");
+                    Thread.Sleep(1000);
+                    Console.Clear();
                 }
             }
 
-            while (loop)
+            Array.Reverse(values);
+
+            Console.Write("\nYour numbers in descending order are: ");
+            for (int x = 0; x < values.Length - 1; x++)
             {
-                if (a < b)
-                {
-                    temp = a;
-                    a = b;
-                    b = temp;
-                }
-                else if (b < c)
-                {
-                    temp = b;
-                    b = c;
-                    c = temp;
-                }
-                else if (c < d)
-                {
-                    temp = c;
-                    c = d;
-                    d = temp;
-                }
-                else if (d < e)
-                {
-                    temp = d;
-                    d = e;
-                    e = temp;
-                }
-                else if (e < f)
-                {
-                    temp = e;
-                    e = f;
-                    f = temp;
-                }
-                else if (f < g)
-                {
-                    temp = f;
-                    f = g;
-                    g = temp;
-                }
-                else if (g < h)
-                {
-                    temp = g;
-                    g = h;
-                    h = temp;
-                }
-                else
-                {
-                    loop = false;
-                }
+                Console.Write(values[x] + ", ");
             }
-            Console.WriteLine($"\nYour numbers in descending order are: {a}, {b}, {c}, {d}, {e}, {f}, {g}, {h}.");
-            Console.Write("\nPress any key to exit..");
-            Console.ReadKey();
+            Console.Write(values[7] + ".\n");
         }
     }
 }
