@@ -40,6 +40,8 @@ namespace CS_NumberSorter
                 Console.Write(values[x] + ", ");
             }
             Console.Write(values[7] + ".\n");
+            Console.Write("\nPress any key to exit..");
+            Console.ReadKey();
         }
     }
 }
