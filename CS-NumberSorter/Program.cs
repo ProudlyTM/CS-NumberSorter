@@ -10,8 +10,22 @@ namespace CS_NumberSorter
             string[] id = { "a = ", "b = ", "c = ", "d = ", "e = ", "f = ", "g = ", "h = " };
             double[] values = new double[8];
             bool retry = true;
+            bool descending = true;
 
-            // Sort in descending order
+            Console.Write("Sort numbers in ascending(a) order/ descending(d) order or exit(e): ");
+            String choice = Console.ReadLine().ToLower();
+            if (choice == "a") { descending = false; }
+            else if (choice == "d") {}
+            else if (choice == "e") { Environment.Exit(1); }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("Choose a valid option! (a/d/e)\n");
+                Main();
+            }
+            Console.WriteLine();
+
+            // Sorting operation
             while (retry)
             {
                 try
@@ -33,7 +47,7 @@ namespace CS_NumberSorter
             }
 
             Array.Sort(values);
-            Array.Reverse(values);
+            if (descending) { Array.Reverse(values); }
 
             Console.Write("\nYour numbers in descending order are: ");
             for (int x = 0; x < values.Length - 1; x++)
