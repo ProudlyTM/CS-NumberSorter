@@ -16,7 +16,7 @@ namespace CS_NumberSorter
             String choice = Console.ReadLine().ToLower();
             if (choice == "a") { descending = false; }
             else if (choice == "d") {}
-            else if (choice == "e") { Environment.Exit(1); }
+            else if (choice == "e") { Environment.Exit(0); }
             else
             {
                 Console.Clear();
