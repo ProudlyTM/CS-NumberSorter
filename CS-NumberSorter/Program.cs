@@ -32,6 +32,7 @@ namespace CS_NumberSorter
                 }
             }
 
+            Array.Sort(values);
             Array.Reverse(values);
 
             Console.Write("\nYour numbers in descending order are: ");
