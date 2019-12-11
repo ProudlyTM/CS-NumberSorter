@@ -55,7 +55,7 @@ namespace CS_NumberSorter
 
             for (int x = 0; x < values.Length - 1; x++)
             {
-                Console.Write(values[x] + ", ");
+                Console.Write(values[x] + "; ");
             }
             Console.Write(values[7] + ".\n");
             Console.Write("\nPress any key to exit..");
