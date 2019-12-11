@@ -9,13 +9,11 @@ namespace CS_NumberSorter
         {
             string[] id = { "a = ", "b = ", "c = ", "d = ", "e = ", "f = ", "g = ", "h = " };
             double[] values = new double[8];
-            bool retry = true;
-            bool descending = true;
+            bool retry = true, descending = true;
 
             Console.Write("Sort numbers in ascending(a) order/ descending(d) order or exit(e): ");
             String choice = Console.ReadLine().ToLower();
-            if (choice == "a") { descending = false; }
-            else if (choice == "d") {}
+            if (choice == "a" || choice == "d") { if (choice == "a") { descending = false; } }
             else if (choice == "e") { Environment.Exit(0); }
             else
             {
